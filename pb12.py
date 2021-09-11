@@ -1,14 +1,17 @@
-from common import prime_factors
-i=0
-s=0
 def ndiv(n):
     ct=0
-    for i in range(1,n+1):
+    for i in range(1,int(n**0.5+1)):
         if n%i==0:
-            ct+=1
+            ct+=2
+        if i*i==n:
+            ct-=1
     return ct
 
-while True:
+def tri_number(n):
+    return int(n*(n+1)/2)
+
+i=0
+while(ndiv(tri_number(i))<500):
     i+=1
-    s+=i
-    print(primef)
+    
+print(tri_number(i))
